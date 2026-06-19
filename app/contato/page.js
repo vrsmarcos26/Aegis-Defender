@@ -298,7 +298,7 @@ export default function ContactPage() {
             
             <div className="lg:col-span-2">
               <div className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 mb-6">
-                <ShieldCheck className="text-blue-600 dark:text-emerald-500" /> AEGIS<span className="text-blue-600 dark:text-emerald-500">.</span>
+                <ShieldCheck className="text-blue-600 dark:text-emerald-500" /> ENQ SOLUÇÕES INTELIGENTES<span className="text-blue-600 dark:text-emerald-500">.</span>
               </div>
               <p className="text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed text-sm">
                 {t.footer_desc}
@@ -364,7 +364,7 @@ export default function ContactPage() {
               <a href="/contato" className="hover:text-blue-600 dark:hover:text-slate-300 transition-colors">{t.footer_faq}</a>
             </div>
             <div>
-              &copy; {new Date().getFullYear()} Aegis Defense. Security by design.
+              &copy; {new Date().getFullYear()} ENQ SOLUÇÕES INTELIGENTES . Security by design.
             </div>
           </div>
         </div>

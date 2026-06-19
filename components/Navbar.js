@@ -25,7 +25,7 @@ export default function Navbar({ lang, setLang, theme, setTheme, t }) {
             <ShieldCheck size={24} />
           </div>
           <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-            AEGIS<span className="text-blue-600 dark:text-emerald-400">.</span>
+            ENQ SOLUÇÕES INTELIGENTES<span className="text-blue-600 dark:text-emerald-400">.</span>
           </span>
         </Link>
 
