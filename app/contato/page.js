@@ -292,13 +292,14 @@ export default function ContactPage() {
       </main>
 
       {/* RODAPÉ */}
+      {/* RODAPÉ */}
       <footer className="bg-white dark:bg-[#060a13] pt-20 pb-10 border-t border-slate-200 dark:border-slate-900 mt-auto">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
             
             <div className="lg:col-span-2">
               <div className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 mb-6">
-                <ShieldCheck className="text-blue-600 dark:text-emerald-500" /> ENQ SOLUÇÕES INTELIGENTES<span className="text-blue-600 dark:text-emerald-500">.</span>
+                <ShieldCheck className="text-blue-600 dark:text-emerald-500" /> ENQ<span className="text-blue-600 dark:text-emerald-500">.</span>
               </div>
               <p className="text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed text-sm">
                 {t.footer_desc}
@@ -319,7 +320,7 @@ export default function ContactPage() {
             <div>
               <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">{t.footer_contact}</h4>
               <ul className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
-                <li><a href="mailto:contato@aegisdefense.com" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2"><Mail size={16} /> contato@aegisdefense.com</a></li>
+                <li><a href="mailto:Comercial@enqsolucoes.com.br" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2"><Mail size={16} /> Comercial@enqsolucoes.com.br</a></li>
                 <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_pricing} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
                 <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_schedule} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
                 <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_reports}</a></li>
@@ -327,28 +328,17 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">{t.footer_offices}</h4>
+              <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">Sede Corporativa</h4>
               <div className="space-y-6 text-sm text-slate-600 dark:text-slate-400">
                 <div>
-                  <strong className="text-slate-900 dark:text-slate-200 block mb-2">{t.footer_country_1}</strong>
-                  <a href="/contato" className="flex items-start gap-2 mb-1 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
+                  <strong className="text-slate-900 dark:text-slate-200 block mb-2">BRASÍLIA - DF</strong>
+                  <a href="/contato" className="flex items-start gap-2 mb-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
                     <Phone size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
-                    <span>+55 (11) 4002-8922</span>
+                    <span>(61) 3033-3228<br/>(61) 98409-0797<br/>(61) 98202-4068</span>
                   </a>
                   <a href="/contato" className="flex items-start gap-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
                     <MapPin size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
-                    <span>Av. Paulista, 1374<br/>São Paulo - SP</span>
-                  </a>
-                </div>
-                <div>
-                  <strong className="text-slate-900 dark:text-slate-200 block mb-2">{t.footer_country_2}</strong>
-                  <a href="/contato" className="flex items-start gap-2 mb-1 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
-                    <Phone size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
-                    <span>+351 912 345 678</span>
-                  </a>
-                  <a href="/contato" className="flex items-start gap-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
-                    <MapPin size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
-                    <span>Av. da Liberdade, 110<br/>Lisboa, 1250-146</span>
+                    <span>SC/S QUADRA 1 BLOCO C<br/>SALA 611</span>
                   </a>
                 </div>
               </div>
@@ -364,7 +354,7 @@ export default function ContactPage() {
               <a href="/contato" className="hover:text-blue-600 dark:hover:text-slate-300 transition-colors">{t.footer_faq}</a>
             </div>
             <div>
-              &copy; {new Date().getFullYear()} ENQ SOLUÇÕES INTELIGENTES . Security by design.
+              &copy; {new Date().getFullYear()} ENQ Soluções Inteligentes. Todos os direitos reservados.
             </div>
           </div>
         </div>

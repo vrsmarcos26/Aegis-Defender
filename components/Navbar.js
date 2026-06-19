@@ -20,12 +20,13 @@ export default function Navbar({ lang, setLang, theme, setTheme, t }) {
     <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-white/80 dark:bg-[#0a0f1c]/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         
+        {/* Logo que retorna para a Home */}
         <Link href="/" className="flex items-center gap-2 cursor-pointer group w-1/4">
           <div className="text-blue-600 dark:text-emerald-400 transition-transform group-hover:scale-110">
             <ShieldCheck size={24} />
           </div>
           <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">
-            ENQ SOLUÇÕES INTELIGENTES<span className="text-blue-600 dark:text-emerald-400">.</span>
+            ENQ Soluções<span className="text-blue-600 dark:text-emerald-400">.</span>
           </span>
         </Link>
 
