@@ -1,9 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import { translations } from '../../locales/translations';
 import { ShieldCheck, ArrowRight, MapPin, Phone, Mail, Send, Calendar, Clock, Trash2, Plus, Info, CheckCircle2 } from 'lucide-react';
-import Image from 'next/image';
 
 export default function ContactPage() {
   // A LÓGICA DE INICIALIZAÇÃO "PREGUIÇOSA" (LAZY INITIALIZER)

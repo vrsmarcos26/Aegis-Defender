@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import Image from 'next/image';
 import Navbar from '../../components/Navbar';
 import { translations } from '../../locales/translations';
 import { 
@@ -8,8 +9,6 @@ import {
   Network, Lock, BadgeCheck, Check, DollarSign, Eye, XCircle, Search, FileText, 
   Info, Bug, CloudOff, Clock, AlertOctagon, Landmark, HeartPulse, ShoppingCart, Dices, CheckCircle2 
 } from 'lucide-react';
-
-import Image from 'next/image';
 
 export default function ServicesPage() {
   // Lógica de Persistência (Mesma do Contato)
