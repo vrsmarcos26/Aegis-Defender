@@ -95,8 +95,8 @@ export default function ContactPage() {
 
               <div className="pt-8 border-t border-slate-200 dark:border-slate-800">
                 <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-4">{t.contact_email_direct}</p>
-                <a href="mailto:contato@aegisdefense.com" className="flex items-center gap-3 text-xl font-bold text-blue-600 dark:text-emerald-400 hover:opacity-80 transition-opacity">
-                  <Mail size={24} /> contato@aegisdefense.com
+                <a href="mailto:comercial@enqsolucoes.com.br" className="flex items-center gap-3 text-xl font-bold text-blue-600 dark:text-emerald-400 hover:opacity-80 transition-opacity">
+                  <Mail size={24} /> comercial@enqsolucoes.com.br
                 </a>
               </div>
             </div>
@@ -292,14 +292,21 @@ export default function ContactPage() {
       </main>
 
       {/* RODAPÉ */}
-      {/* RODAPÉ */}
       <footer className="bg-white dark:bg-[#060a13] pt-20 pb-10 border-t border-slate-200 dark:border-slate-900 mt-auto">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
             
             <div className="lg:col-span-2">
-              <div className="text-2xl font-extrabold text-slate-900 dark:text-white flex items-center gap-2 mb-6">
-                <ShieldCheck className="text-blue-600 dark:text-emerald-500" /> ENQ<span className="text-blue-600 dark:text-emerald-500">.</span>
+              <div className="mb-6">
+                 {typeof window !== 'undefined' && (
+                    <Image 
+                      src={theme === 'light' ? "/logo-enq-claro-sem-fundo.jpg" : "/logo-enq-dark-sem-fundo.png"} 
+                      alt="ENQ Soluções Inteligentes" 
+                      width={200} 
+                      height={60} 
+                      className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                    />
+                 )}
               </div>
               <p className="text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed text-sm">
                 {t.footer_desc}
