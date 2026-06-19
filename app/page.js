@@ -472,11 +472,11 @@ export default function Home() {
               <div className="lg:col-span-2">
                 <div className="mb-6">
                     <Image 
-                        src={theme === 'light' ? "/logo-enq-claro-sem-fundo.png" : "/logo-enq-dark-sem-fundo.png"} 
-                        alt="ENQ Soluções Inteligentes" 
-                        width={200} 
-                        height={60} 
-                        className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                      src={theme === 'light' ? "/logo-enq-claro-sem-fundo.png" : "/logo-enq-dark-sem-fundo.png"} 
+                      alt="ENQ Soluções Inteligentes" 
+                      width={400} 
+                      height={120} 
+                      className="h-20 sm:h-24 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                     />
                 </div>
                 <p className="text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed text-sm">
