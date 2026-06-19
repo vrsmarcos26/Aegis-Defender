@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../../components/Navbar';
 import { translations } from '../../locales/translations';
 import { ShieldCheck, ArrowRight, MapPin, Phone, Mail, Send, Calendar, Clock, Trash2, Plus, Info, CheckCircle2 } from 'lucide-react';
+import Image from 'next/image';
 
 export default function ContactPage() {
   // A LÓGICA DE INICIALIZAÇÃO "PREGUIÇOSA" (LAZY INITIALIZER)
@@ -300,7 +301,7 @@ export default function ContactPage() {
               <div className="mb-6">
                  {typeof window !== 'undefined' && (
                     <Image 
-                      src={theme === 'light' ? "/logo-enq-claro-sem-fundo.jpg" : "/logo-enq-dark-sem-fundo.png"} 
+                      src={theme === 'light' ? "/logo-enq-claro-sem-fundo.png" : "/logo-enq-dark-sem-fundo.png"} 
                       alt="ENQ Soluções Inteligentes" 
                       width={200} 
                       height={60} 

@@ -9,6 +9,8 @@ import {
   Info, Bug, CloudOff, Clock, AlertOctagon, Landmark, HeartPulse, ShoppingCart, Dices, CheckCircle2 
 } from 'lucide-react';
 
+import Image from 'next/image';
+
 export default function ServicesPage() {
   // Lógica de Persistência (Mesma do Contato)
   const [lang, setLang] = useState(() => {
@@ -295,7 +297,7 @@ export default function ServicesPage() {
               <div className="mb-6">
                  {typeof window !== 'undefined' && (
                     <Image 
-                      src={theme === 'light' ? "/logo-enq-claro-sem-fundo.jpg" : "/logo-enq-dark-sem-fundo.png"} 
+                      src={theme === 'light' ? "/logo-enq-claro-sem-fundo.png" : "/logo-enq-dark-sem-fundo.png"} 
                       alt="ENQ Soluções Inteligentes" 
                       width={200} 
                       height={60} 

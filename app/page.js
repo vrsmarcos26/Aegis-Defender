@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import { translations } from '../locales/translations';
 import { ShieldCheck, Lock, AlertTriangle, Crosshair, CheckCircle2, XCircle, Database, Users, Building2, Activity, Zap, TerminalSquare, Eye, FileCode2, Check, ArrowRight, Info, Search, FileText, Target, ShieldAlert, Award, ChevronRight, Bug, CloudOff, Clock, DollarSign, AlertOctagon, Landmark, HeartPulse, ShoppingCart, Dices, MapPin, Phone, Mail } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Home() {
   // Lógica de Persistência (Mesma do Contato)
@@ -452,7 +453,7 @@ export default function Home() {
               <div className="mb-6">
                  {typeof window !== 'undefined' && (
                     <Image 
-                      src={theme === 'light' ? "/logo-enq-claro-sem-fundo.jpg" : "/logo-enq-dark-sem-fundo.png"} 
+                      src={theme === 'light' ? "/logo-enq-claro-sem-fundo.png" : "/logo-enq-dark-sem-fundo.png"} 
                       alt="ENQ Soluções Inteligentes" 
                       width={200} 
                       height={60} 

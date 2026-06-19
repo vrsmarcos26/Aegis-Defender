@@ -24,7 +24,7 @@ export default function Navbar({ lang, setLang, theme, setTheme, t }) {
         <Link href="/" className="flex items-center cursor-pointer w-1/4 transition-transform hover:scale-105">
           {mounted ? (
             <Image 
-              src={theme === 'light' ? "/logo-enq-claro-sem-fundo.jpg" : "/logo-enq-dark-sem-fundo.png"} 
+              src={theme === 'light' ? "/logo-enq-claro-sem-fundo.png" : "/logo-enq-dark-sem-fundo.png"} 
               alt="ENQ Soluções Inteligentes" 
               width={200} 
               height={60} 
