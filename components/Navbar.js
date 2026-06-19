@@ -36,7 +36,9 @@ export default function Navbar({ lang, setLang, theme, setTheme, t }) {
             alt="ENQ Soluções Inteligentes" 
             width={400} 
             height={120} 
-            className="h-16 sm:h-20 w-auto object-contain drop-shadow-sm"
+            className={`w-auto object-contain drop-shadow-sm transition-all ${
+              theme === 'light' ? 'h-24 sm:h-28 scale-110 -ml-4' : 'h-16 sm:h-20'
+            }`}
             priority
           />
         </Link>

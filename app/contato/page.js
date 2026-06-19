@@ -330,7 +330,9 @@ export default function ContactPage() {
                       alt="ENQ Soluções Inteligentes" 
                       width={400} 
                       height={120} 
-                      className="h-20 sm:h-24 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                      className={`w-auto object-contain opacity-90 hover:opacity-100 transition-all ${
+                        theme === 'light' ? 'h-28 sm:h-32 scale-110 -ml-4' : 'h-20 sm:h-24'
+                      }`}
                     />
                 </div>
                 <p className="text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed text-sm">
