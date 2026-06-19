@@ -115,7 +115,7 @@ export default function ContactPage() {
             <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-10 rounded-3xl shadow-sm">
               {/* === MUDANÇA AQUI: FORM ACTION DO FORMSPREE === */}
               {/* TROQUE O 'SEU_CODIGO_AQUI' pelo código que o formspree.io gerar para você */}
-              <form action="https://formspree.io/f/SEU_CODIGO_AQUI" method="POST" className="space-y-6">
+              <form action="https://formspree.io/f/xnjyezqb" method="POST" className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-2">{t.form_name}</label>
@@ -158,7 +158,7 @@ export default function ContactPage() {
             </div>
 
             {/* TROQUE O 'SEU_CODIGO_AQUI' pelo código do formspree */}
-            <form action="https://formspree.io/f/SEU_CODIGO_AQUI" method="POST" className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 rounded-3xl shadow-sm space-y-12">
+            <form action="https://formspree.io/f/xnjyezqb" method="POST" className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-8 sm:p-12 rounded-3xl shadow-sm space-y-12">
               
               {/* Inputs invisíveis enviando dados complexos do state para o email */}
               <input type="hidden" name="Tipo_de_Formulario" value="Cotação Detalhada" />
@@ -304,7 +304,7 @@ export default function ContactPage() {
               <div className="flex-1 w-full bg-slate-50 dark:bg-[#0a0f1c]">
                 {/* TROQUE ESTE LINK PELA URL REAL DO SEU CALENDLY */}
                 <iframe 
-                  src="https://calendly.com/seu-link-aqui" 
+                  src="https://calendar.google.com/calendar/embed?src=vrsmarcos21%40gmail.com&ctz=America%2FSao_Paulo" 
                   width="100%" 
                   height="100%" 
                   className="border-none"
