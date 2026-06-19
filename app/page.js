@@ -6,21 +6,38 @@ import { translations } from '../locales/translations';
 import { ShieldCheck, Lock, AlertTriangle, Crosshair, CheckCircle2, XCircle, Database, Users, Building2, Activity, Zap, TerminalSquare, Eye, FileCode2, Check, ArrowRight, Info, Search, FileText, Target, ShieldAlert, Award, ChevronRight, Bug, CloudOff, Clock, DollarSign, AlertOctagon, Landmark, HeartPulse, ShoppingCart, Dices, MapPin, Phone, Mail } from 'lucide-react';
 
 export default function Home() {
-  // Lógica de Persistência (Mesma do Contato)
-  const [lang, setLang] = useState(() => {
-    if (typeof window !== 'undefined') return localStorage.getItem('lang') || 'pt';
-    return 'pt';
-  });
-  const [theme, setTheme] = useState(() => {
-    if (typeof window !== 'undefined') return localStorage.getItem('theme') || 'light';
-    return 'light';
-  });
+  const [mounted, setMounted] = useState(false);
+  const [lang, setLang] = useState('pt');
+  const [theme, setTheme] = useState('light');
 
+  // Inicializa o estado de forma segura no cliente
   useEffect(() => {
-    localStorage.setItem('lang', lang);
-    localStorage.setItem('theme', theme);
-    document.documentElement.classList.toggle('dark', theme === 'dark');
-  }, [lang, theme]);
+    setMounted(true);
+    const savedLang = localStorage.getItem('lang') || 'pt';
+    const savedTheme = localStorage.getItem('theme');
+    
+    setLang(savedLang);
+    
+    if (savedTheme) {
+      setTheme(savedTheme);
+      document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    } else {
+      setTheme('light');
+    }
+  }, []);
+
+  // Salva idioma quando muda
+  useEffect(() => {
+    if (mounted) localStorage.setItem('lang', lang);
+  }, [lang, mounted]);
+
+  // Salva tema quando muda
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem('theme', theme);
+      document.documentElement.classList.toggle('dark', theme === 'dark');
+    }
+  }, [theme, mounted]);
 
   const t = translations[lang];
 
@@ -38,12 +55,14 @@ export default function Home() {
   ];
 
   return (
-    <div className="bg-slate-50 dark:bg-[#0a0f1c] min-h-screen text-slate-900 dark:text-slate-100 font-sans selection:bg-blue-200 dark:selection:bg-emerald-900 flex flex-col">
+    <div className="bg-slate-50 dark:bg-[#0a0f1c] min-h-screen text-slate-900 dark:text-slate-100 font-sans selection:bg-blue-200 dark:selection:bg-emerald-900 flex flex-col transition-colors duration-300">
       <style dangerouslySetInnerHTML={{__html: `
         @keyframes marquee { 0% { transform: translateX(0%); } 100% { transform: translateX(-50%); } }
         .animate-marquee { animation: marquee 35s linear infinite; }
       `}} />
-      <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />
+      
+      {/* NAVBAR CONDICIONADA AO MOUNTED */}
+      {mounted && <Navbar lang={lang} setLang={setLang} theme={theme} setTheme={setTheme} t={t} />}
 
       <main className="pt-32 overflow-hidden flex-grow">
         
@@ -444,84 +463,95 @@ export default function Home() {
 
       </main>
 
-      {/* RODAPÉ */}
-      <footer className="bg-white dark:bg-[#060a13] pt-20 pb-10 border-t border-slate-200 dark:border-slate-900 mt-auto">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
-            
-            <div className="lg:col-span-2">
-              <div className="mb-6">
-                 {typeof window !== 'undefined' && (
+      {/* RODAPÉ CONDICIONADO AO MOUNTED */}
+      {mounted && (
+        <footer className="bg-white dark:bg-[#060a13] pt-20 pb-10 border-t border-slate-200 dark:border-slate-900 mt-auto transition-colors duration-300">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+              
+              <div className="lg:col-span-2">
+                <div className="mb-6">
                     <Image 
-                      src={theme === 'light' ? "/logo-enq-claro-sem-fundo.png" : "/logo-enq-dark-sem-fundo.png"} 
-                      alt="ENQ Soluções Inteligentes" 
-                      width={200} 
-                      height={60} 
-                      className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
+                        src={theme === 'light' ? "/logo-enq-claro-sem-fundo.png" : "/logo-enq-dark-sem-fundo.png"} 
+                        alt="ENQ Soluções Inteligentes" 
+                        width={200} 
+                        height={60} 
+                        className="h-12 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity"
                     />
-                 )}
-              </div>
-              <p className="text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed text-sm">
-                {t.footer_desc}
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">{t.footer_contact}</h4>
-              <ul className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
-                <li><a href="mailto:Comercial@enqsolucoes.com.br" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2"><Mail size={16} /> Comercial@enqsolucoes.com.br</a></li>
-                <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_pricing} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
-                <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_schedule} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
-                <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_reports}</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">Sedes</h4>
-              <div className="space-y-6 text-sm text-slate-600 dark:text-slate-400">
-                {/* Escritório Brasil */}
-                <div>
-                  <strong className="text-slate-900 dark:text-slate-200 block mb-2">BRASÍLIA - DF</strong>
-                  <a href="/contato" className="flex items-start gap-2 mb-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
-                    <Phone size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
-                    <span>(61) 3033-3228<br/>(61) 98409-0797<br/>(61) 98202-4068</span>
-                  </a>
-                  <a href="/contato" className="flex items-start gap-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
-                    <MapPin size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
-                    <span>SC/S QUADRA 1 BLOCO C<br/>SALA 611<br/>Brasília - DF</span>
-                  </a>
                 </div>
-                {/* Escritório Alemanha */}
-                <div>
-                  <strong className="text-slate-900 dark:text-slate-200 block mb-2">ALEMANHA</strong>
-                  <a href="/contato" className="flex items-start gap-2 mb-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
-                    <Phone size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
-                    <span>+49 176 29238326</span>
-                  </a>
-                  <a href="/contato" className="flex items-start gap-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
-                    <MapPin size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
-                    <span>Anne-Conway-Str. 1<br/>28359 Bremen, Germany<br/>USt./VATIN: DE 322 325 476</span>
-                  </a>
+                <p className="text-slate-600 dark:text-slate-400 max-w-sm leading-relaxed text-sm">
+                  {t.footer_desc}
+                </p>
+              </div>
+
+              {/* ... O Restante do seu footer (Setores, Contatos, Sedes) ... */}
+              <div>
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">{t.footer_sectors}</h4>
+                <ul className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
+                  <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">{t.sectors_1}</a></li>
+                  <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">{t.sectors_2}</a></li>
+                  <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">{t.sectors_3}</a></li>
+                  <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">{t.sectors_6}</a></li>
+                  <li><a href="/servicos" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors mt-2 inline-block font-medium">{t.btn_all_sectors}</a></li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">{t.footer_contact}</h4>
+                <ul className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
+                  <li><a href="mailto:Comercial@enqsolucoes.com.br" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2"><Mail size={16} /> Comercial@enqsolucoes.com.br</a></li>
+                  <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_pricing} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
+                  <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_schedule} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
+                  <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_reports}</a></li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">Sedes</h4>
+                <div className="space-y-6 text-sm text-slate-600 dark:text-slate-400">
+                  {/* Escritório Brasil */}
+                  <div>
+                    <strong className="text-slate-900 dark:text-slate-200 block mb-2">BRASÍLIA - DF</strong>
+                    <a href="/contato" className="flex items-start gap-2 mb-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
+                      <Phone size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
+                      <span>(61) 3033-3228<br/>(61) 98409-0797<br/>(61) 98202-4068</span>
+                    </a>
+                    <a href="/contato" className="flex items-start gap-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
+                      <MapPin size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
+                      <span>SC/S QUADRA 1 BLOCO C<br/>SALA 611<br/>Brasília - DF</span>
+                    </a>
+                  </div>
+                  {/* Escritório Alemanha */}
+                  <div>
+                    <strong className="text-slate-900 dark:text-slate-200 block mb-2">ALEMANHA</strong>
+                    <a href="/contato" className="flex items-start gap-2 mb-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
+                      <Phone size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
+                      <span>+49 176 29238326</span>
+                    </a>
+                    <a href="/contato" className="flex items-start gap-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
+                      <MapPin size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
+                      <span>Anne-Conway-Str. 1<br/>28359 Bremen, Germany<br/>USt./VATIN: DE 322 325 476</span>
+                    </a>
+                  </div>
                 </div>
               </div>
+
             </div>
 
-          </div>
-
-          <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-slate-200 dark:border-slate-800/50 text-xs text-slate-500 gap-4">
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
-              <a href="/contato" className="hover:text-blue-600 dark:hover:text-slate-300 transition-colors">{t.footer_privacy}</a>
-              <a href="/contato" className="hover:text-blue-600 dark:hover:text-slate-300 transition-colors">{t.footer_cookies}</a>
-              <a href="/contato" className="hover:text-blue-600 dark:hover:text-slate-300 transition-colors">{t.footer_terms}</a>
-              <a href="/contato" className="hover:text-blue-600 dark:hover:text-slate-300 transition-colors">{t.footer_faq}</a>
+            <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-slate-200 dark:border-slate-800/50 text-xs text-slate-500 gap-4">
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
+                <a href="/contato" className="hover:text-blue-600 dark:hover:text-slate-300 transition-colors">{t.footer_privacy}</a>
+                <a href="/contato" className="hover:text-blue-600 dark:hover:text-slate-300 transition-colors">{t.footer_cookies}</a>
+                <a href="/contato" className="hover:text-blue-600 dark:hover:text-slate-300 transition-colors">{t.footer_terms}</a>
+                <a href="/contato" className="hover:text-blue-600 dark:hover:text-slate-300 transition-colors">{t.footer_faq}</a>
+              </div>
+              <div>
+                &copy; {new Date().getFullYear()} ENQ Soluções Inteligentes. Todos os direitos reservados.
+              </div>
             </div>
-            <div>
-              &copy; {new Date().getFullYear()} ENQ Soluções Inteligentes. Todos os direitos reservados.
-            </div>
           </div>
-        </div>
-      </footer>
+        </footer>
+      )}
     </div>
   );
 }
-
