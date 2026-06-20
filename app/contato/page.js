@@ -300,25 +300,23 @@ export default function ContactPage() {
                 <span className="text-white dark:text-emerald-400 font-bold uppercase text-sm">Ou agende uma reunião de 30 min</span>
                 <span className="text-blue-200 dark:text-slate-400 text-xs">Fale ao vivo com nosso time. Sem compromisso.</span>
               </div>
-              
-              <div className="flex-1 w-full bg-slate-50 dark:bg-[#0a0f1c]">
-                {/* TROQUE ESTE LINK PELA URL REAL DO SEU CALENDLY */}
-                <div className="flex flex-col items-center justify-center p-12 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 text-center">
-                  <Calendar size={64} className="text-blue-600 dark:text-emerald-500 mb-6" />
-                  <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Agende sua reunião</h3>
-                  <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-sm">
-                    Escolha o melhor horário diretamente na nossa agenda oficial do Google.
-                  </p>
-                  <a 
-                    href="https://calendar.app.google/4NMGqQfuvvZfkPnD7" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="bg-blue-600 dark:bg-emerald-500 text-white dark:text-slate-950 px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform"
-                  >
-                    Abrir Agenda do Google
-                  </a>
-                </div>
+                            
+              <div className="flex flex-col items-center justify-center p-12 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 text-center">
+                <Calendar size={64} className="text-blue-600 dark:text-emerald-500 mb-6" />
+                <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Agende sua reunião</h3>
+                <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-sm">
+                  Escolha o melhor horário diretamente na nossa agenda oficial do Google.
+                </p>
+                <a 
+                  href="https://calendar.app.google/4NMGqQfuvvZfkPnD7" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="bg-blue-600 dark:bg-emerald-500 text-white dark:text-slate-950 px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform"
+                >
+                  Abrir Agenda do Google
+                </a>
               </div>
+              
               
             </div>
           </div>
