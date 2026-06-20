@@ -303,12 +303,21 @@ export default function ContactPage() {
               
               <div className="flex-1 w-full bg-slate-50 dark:bg-[#0a0f1c]">
                 {/* TROQUE ESTE LINK PELA URL REAL DO SEU CALENDLY */}
-                <iframe 
-                  src="https://calendar.google.com/calendar/embed?src=vrsmarcos21%40gmail.com&ctz=America%2FSao_Paulo" 
-                  width="100%" 
-                  height="100%" 
-                  className="border-none"
-                ></iframe>
+                <div className="flex flex-col items-center justify-center p-12 bg-white dark:bg-slate-900 rounded-3xl border border-slate-200 dark:border-slate-800 text-center">
+                  <Calendar size={64} className="text-blue-600 dark:text-emerald-500 mb-6" />
+                  <h3 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">Agende sua reunião</h3>
+                  <p className="text-slate-600 dark:text-slate-400 mb-8 max-w-sm">
+                    Escolha o melhor horário diretamente na nossa agenda oficial do Google.
+                  </p>
+                  <a 
+                    href="https://calendar.app.google/4NMGqQfuvvZfkPnD7" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 dark:bg-emerald-500 text-white dark:text-slate-950 px-8 py-4 rounded-xl font-bold hover:scale-105 transition-transform"
+                  >
+                    Abrir Agenda do Google
+                  </a>
+                </div>
               </div>
               
             </div>
