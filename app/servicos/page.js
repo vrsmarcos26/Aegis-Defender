@@ -343,7 +343,11 @@ export default function ServicesPage() {
               <div>
                 <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">{t.footer_contact}</h4>
                 <ul className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
-                  <li><a href="mailto:Comercial@enqsolucoes.com.br" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2"><Mail size={16} /> Comercial@enqsolucoes.com.br</a></li>
+                  <li>
+                    <a href="mailto:comercial@enqsolucoes.com.br" className="flex items-center gap-3 text-xl font-bold text-blue-600 dark:text-emerald-400 hover:opacity-80 transition-opacity">
+                      <Mail size={24} /> comercial@enqsolucoes.com.br
+                    </a>
+                  </li>                   
                   <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_pricing} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
                   <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_schedule} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
                   <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_reports}</a></li>
@@ -354,23 +358,32 @@ export default function ServicesPage() {
                 <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">Sedes</h4>
                 <div className="space-y-6 text-sm text-slate-600 dark:text-slate-400">
                   <div>
-                    <strong className="text-slate-900 dark:text-slate-200 block mb-2">BRASÍLIA - DF</strong>
-                    <a href="/contato" className="flex items-start gap-2 mb-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
-                      <Phone size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
-                      <span>(61) 3033-3228<br/>(61) 98409-0797<br/>(61) 98202-4068</span>
-                    </a>
-                    <a href="/contato" className="flex items-start gap-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
+                    {/* LINKS WHATSAPP */}
+                    <div className="flex flex-col gap-2 mb-2">
+                      <a href="https://wa.me/556130333228" target="_blank" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2">
+                        <Phone size={14} className="text-blue-600 dark:text-emerald-500" /> (61) 3033-3228
+                      </a>
+                      <a href="https://wa.me/5561984090797" target="_blank" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2">
+                        <Phone size={14} className="text-blue-600 dark:text-emerald-500" /> (61) 98409-0797
+                      </a>
+                      <a href="https://wa.me/5561982024068" target="_blank" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2">
+                        <Phone size={14} className="text-blue-600 dark:text-emerald-500" /> (61) 98202-4068
+                      </a>
+                    </div>
+                    
+                    {/* LINK GOOGLE MAPS */}
+                    <a href="https://www.google.com/maps/search/?api=1&query=SC/S+QUADRA+1+BLOCO+C+SALA+611+Brasília+DF" target="_blank" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-start gap-2">
                       <MapPin size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
                       <span>SC/S QUADRA 1 BLOCO C<br/>SALA 611<br/>Brasília - DF</span>
                     </a>
                   </div>
+
                   <div>
                     <strong className="text-slate-900 dark:text-slate-200 block mb-2">ALEMANHA</strong>
-                    <a href="/contato" className="flex items-start gap-2 mb-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
-                      <Phone size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
-                      <span>+49 176 29238326</span>
+                    <a href="https://wa.me/4917629238326" target="_blank" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2 mb-2">
+                      <Phone size={14} className="text-blue-600 dark:text-emerald-500" /> +49 176 29238326
                     </a>
-                    <a href="/contato" className="flex items-start gap-2 hover:text-blue-600 dark:hover:text-emerald-400 transition-colors">
+                    <a href="https://www.google.com/maps/search/?api=1&query=Anne-Conway-Str.+1+28359+Bremen+Germany" target="_blank" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-start gap-2">
                       <MapPin size={14} className="shrink-0 mt-0.5 text-blue-600 dark:text-emerald-500" />
                       <span>Anne-Conway-Str. 1<br/>28359 Bremen, Germany<br/>USt./VATIN: DE 322 325 476</span>
                     </a>
