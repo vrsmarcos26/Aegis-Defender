@@ -120,10 +120,12 @@ export default function Home() {
             {[...companies, ...companies].map((company, index) => (
               <div key={index} className="w-48 sm:w-64 flex items-center justify-center shrink-0">
                 <img 
-                  src={`https://api.brandfetch.io/v2/logos/${company.slug}.com?c=1`} 
+                  // Aqui usamos uma URL que busca a logo com base no nome do site de forma mais inteligente
+                  src={`https://logo.clearbit.com/${company.slug}.com`} 
                   alt={company.name} 
                   className="h-8 sm:h-10 opacity-40 hover:opacity-100 hover:scale-110 transition-all duration-300 select-none"
-                  onError={(e) => { e.target.src = "/fallback-logo.png"; }} // Opcional: logo padrão caso falhe
+                  // Se a imagem falhar, ela simplesmente fica invisível sem quebrar o layout
+                  onError={(e) => { e.target.style.display = 'none'; }} 
                 />
               </div>
             ))}
