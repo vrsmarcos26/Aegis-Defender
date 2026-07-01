@@ -344,8 +344,8 @@ export default function ServicesPage() {
                 <h4 className="text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider mb-6">{t.footer_contact}</h4>
                 <ul className="space-y-4 text-sm text-slate-600 dark:text-slate-400">
                   <li>
-                    <a href="mailto:comercial@enqsolucoes.com.br" className="flex items-center gap-3 text-xl font-bold text-blue-600 dark:text-emerald-400 hover:opacity-80 transition-opacity">
-                      <Mail size={24} /> comercial@enqsolucoes.com.br
+                    <a href="mailto:Comercial@enqsolucoes.com.br" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center gap-2">
+                      <Mail size={16} /> Comercial@enqsolucoes.com.br
                     </a>
                   </li>                   
                   <li><a href="/contato" className="hover:text-blue-600 dark:hover:text-emerald-400 transition-colors flex items-center justify-between group">{t.footer_pricing} <ArrowRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" /></a></li>
