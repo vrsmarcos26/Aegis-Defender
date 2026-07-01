@@ -48,7 +48,8 @@ export default function Home() {
     { name: "Airbnb", slug: "airbnb" },
     { name: "Google", slug: "google" },
     { name: "Meta", slug: "meta" },
-    { name: "Amazon", slug: "amazon" },
+    { name: "Microsoft", slug: "microsoft" },
+    { name: "Adobe", slug: "adobe" },
     { name: "PayPal", slug: "paypal" },
     { name: "Spotify", slug: "spotify" },
     { name: "Nubank", slug: "nubank" }
@@ -120,12 +121,9 @@ export default function Home() {
             {[...companies, ...companies].map((company, index) => (
               <div key={index} className="w-48 sm:w-64 flex items-center justify-center shrink-0">
                 <img 
-                  // Aqui usamos uma URL que busca a logo com base no nome do site de forma mais inteligente
-                  src={`https://logo.clearbit.com/${company.slug}.com`} 
+                  src={`https://cdn.simpleicons.org/${company.slug}/94a3b8`} 
                   alt={company.name} 
                   className="h-8 sm:h-10 opacity-40 hover:opacity-100 hover:scale-110 transition-all duration-300 select-none"
-                  // Se a imagem falhar, ela simplesmente fica invisível sem quebrar o layout
-                  onError={(e) => { e.target.style.display = 'none'; }} 
                 />
               </div>
             ))}
