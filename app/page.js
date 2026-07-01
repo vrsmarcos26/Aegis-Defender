@@ -48,7 +48,7 @@ export default function Home() {
     { name: "Airbnb", slug: "airbnb" },
     { name: "Google", slug: "google" },
     { name: "Meta", slug: "meta" },
-    { name: "Microsoft", slug: "microsoft" },
+    { name: "Cisco", slug: "cisco" },
     { name: "Adobe", slug: "adobe" },
     { name: "PayPal", slug: "paypal" },
     { name: "Spotify", slug: "spotify" },
